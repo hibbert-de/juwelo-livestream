@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
 class CustomSliderWithFreeMovementAndDots extends StatefulWidget {
+  const CustomSliderWithFreeMovementAndDots({super.key});
+
   @override
   _CustomSliderWithFreeMovementAndDotsState createState() =>
       _CustomSliderWithFreeMovementAndDotsState();
@@ -11,15 +13,12 @@ class _CustomSliderWithFreeMovementAndDotsState
     extends State<CustomSliderWithFreeMovementAndDots> {
   double _currentValue = 50.0;
   bool _showThumb = false;
-  bool _enableHapticFeedback = true;
 
-  // Marken für Kapitel (Dots)
   final List<double> _tickMarks = [0, 20, 40, 60, 80, 100];
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width * 0.95;
-//width = 300;
     return SizedBox(
       width: width,
       height: 200,
