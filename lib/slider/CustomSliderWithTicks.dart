@@ -13,7 +13,7 @@ class _CustomSliderWithFreeMovementAndDotsState
     extends State<CustomSliderWithFreeMovementAndDots> {
   double _currentValue = 50.0;
   bool _showThumb = false;
-
+  bool _feedback = true;
   final List<double> _tickMarks = [ 10,20, 40, 60, 80];
 
   @override
@@ -110,9 +110,13 @@ class _CustomSliderWithFreeMovementAndDotsState
 
     // Überprüfe, ob der nächste Tick innerhalb des snapThreshold liegt
     if ((closestTick - value).abs() <= snapThreshold) {
+      if (_feedback) {
+        _feedback = false;
+        HapticFeedback.lightImpact(); // Haptisches Feedback
+      }
       return closestTick; // Snap zum Tick
     }
-
+    _feedback = true;
     // Kein Snap, behalte den aktuellen Wert bei
     return value;
   }
