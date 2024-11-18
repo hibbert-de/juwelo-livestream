@@ -14,7 +14,7 @@ class _CustomSliderWithFreeMovementAndDotsState
   double _currentValue = 50.0;
   bool _showThumb = false;
 
-  final List<double> _tickMarks = [0, 20, 40, 60, 80, 100];
+  final List<double> _tickMarks = [ 10,20, 40, 60, 80];
 
   @override
   Widget build(BuildContext context) {
