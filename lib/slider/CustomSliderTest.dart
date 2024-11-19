@@ -11,6 +11,6 @@ class PageCustomSlider extends StatefulWidget {
 class _PageCustomSliderState extends State<PageCustomSlider> {
   @override
   Widget build(BuildContext context) {
-    return  CustomSliderWithFreeMovementAndDots();
+    return  SeekBarWithChapters();
   }
 }
